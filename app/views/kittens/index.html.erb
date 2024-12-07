@@ -1,0 +1,12 @@
+<div>
+  <h1 class="font-bold text-4xl">Kittens#index</h1>
+  <p>Find me in app/views/kittens/index.html.erb</p>
+</div>
+
+<%= link_to "New", new_kitten_path %>
+
+<%@kittens.map do|k|%>
+  <div>
+    <%=link_to k.name, k%>
+  </div>
+<%end%>
