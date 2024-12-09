@@ -2,19 +2,36 @@
     <div>
         <%= f.label :name%>
         <%= f.text_field :name%>
+        <% unless @kitten.errors[:name].blank?%>
+            <p><%= @kitten.errors[:name][0]%></p>
+        <%end%>
     </div>
+
     <div>
         <%= f.label :age%>
         <%= f.text_field :age%>
+        <% unless @kitten.errors[:age].blank?%>
+            <p><%= @kitten.errors[:age][0]%></p>
+        <%end%>
     </div>
+
     <div>
         <%= f.label :cuteness%>
         <%= f.text_field :cuteness%>
+        <% unless @kitten.errors[:cuteness].blank? %>
+            <p><%= @kitten.errors[:cuteness][0]%></p>
+        <%end%>
+
     </div>
+
     <div>
         <%= f.label :softness%>
         <%= f.text_field :softness%>
+        <% unless @kitten.errors[:softness].blank?%>
+            <p><%= @kitten.errors[:softness][0]%></p>
+        <%end%>
     </div>
+
     <div>
         <%= f.submit%>
     </div>
