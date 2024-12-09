@@ -17,8 +17,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_144941) do
   create_table "kittens", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.string "cuteness"
-    t.string "softness"
+    t.integer "cuteness"
+    t.integer "softness"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

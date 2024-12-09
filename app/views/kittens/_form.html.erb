@@ -9,7 +9,7 @@
 
     <div>
         <%= f.label :age%>
-        <%= f.text_field :age%>
+        <%= f.number_field :age%>
         <% unless @kitten.errors[:age].blank?%>
             <p><%= @kitten.errors[:age][0]%></p>
         <%end%>
@@ -17,16 +17,15 @@
 
     <div>
         <%= f.label :cuteness%>
-        <%= f.text_field :cuteness%>
+        <%= f.select :cuteness, Kitten.cutenesses.map {|key,value| [key,value]}%>
         <% unless @kitten.errors[:cuteness].blank? %>
             <p><%= @kitten.errors[:cuteness][0]%></p>
         <%end%>
-
     </div>
 
     <div>
         <%= f.label :softness%>
-        <%= f.text_field :softness%>
+        <%= f.select :softness, Kitten.softnesses.map {|key,value| [key,value]}%>
         <% unless @kitten.errors[:softness].blank?%>
             <p><%= @kitten.errors[:softness][0]%></p>
         <%end%>

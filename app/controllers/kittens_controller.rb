@@ -12,7 +12,9 @@ class KittensController < ApplicationController
   end
 
   def create
-    @kitten = Kitten.new(kitten_params)
+    cuteness = kitten_params[:cuteness].to_i
+    softness = kitten_params[:softness].to_i
+    @kitten = Kitten.new(kitten_params.merge(cuteness: cuteness, softness: softness))
 
     if @kitten.save
       redirect_to @kitten, flash: {notice: "New kitten has arrived"}
